@@ -1,0 +1,20 @@
+LIBERO-plus — simulator dependency of PointmapVLA
+==================================================
+
+This repository is a pinned snapshot of LIBERO-plus
+(https://github.com/sylvestf/LIBERO-plus, commit
+4976dc30028e805ff8094b55501d532c48fec182), published so that the PointmapVLA
+LIBERO-Plus results can be reproduced against exactly the code that produced
+them. It is not maintained as a general-purpose LIBERO-plus distribution.
+
+The upstream repository does not include a license file. All rights in the
+upstream code remain with its authors; this snapshot is redistributed on
+GitHub solely for reproducibility, as GitHub's terms permit for public
+repositories, and no license is granted or implied for the upstream code by
+the PointmapVLA authors. Please contact the LIBERO-plus authors for any use
+beyond reproducing these experiments.
+
+Changes relative to upstream: the two `torch.load(init_states_path)` calls in
+libero/libero/benchmark/__init__.py pass `weights_only=False`, which torch 2.6+
+requires to read the benchmark's pickled initial states. Nothing else is
+modified.
